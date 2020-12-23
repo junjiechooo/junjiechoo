@@ -1110,7 +1110,7 @@ section, header#home {
     background-image: url(assets/images/footer-bg.jpg);
     background-size: cover;
     background-position: center;
-    padding-top: 280px;
+    padding-top: 100px;
 }
 
 #map-holder, #contact-holder {
