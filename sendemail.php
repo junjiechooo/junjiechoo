@@ -4,7 +4,7 @@ if(!$_POST) exit;
 
 function tommus_email_validate($email) { return filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email); }
 
-$name = $_POST['name']; $email = $_POST['email']; $website = $_POST['website']; $comments = $_POST['comments'];
+$name = $_POST['name']; $email = $_POST['email']; $phone = $_POST['phone']; $comments = $_POST['comments'];
 
 
 if(trim($name) == '') {
@@ -15,10 +15,10 @@ if(trim($name) == '') {
 	exit('<div class="alert alert-danger">Attention! Please enter a valid email address.</div>');
 } else if(!tommus_email_validate($email)) {
 	exit('<div class="alert alert-danger">Attention! You have entered an invalid e-mail address.</div>');
-} else if(trim($website) == 'Website') {
-	exit('<div class="alert alert-danger">Attention! Please enter your website.</div>');
-} else if(trim($website) == '') {
-	exit('<div class="alert alert-danger">Attention! Please enter your website.</div>');
+} else if(trim($phone) == 'Phone') {
+	exit('<div class="alert alert-danger">Attention! Please enter your phone number.</div>');
+} else if(trim($phone) == '') {
+	exit('<div class="alert alert-danger">Attention! Please enter your phone number.</div>');
 } else if(trim($comments) == 'Message') {
 	exit('<div class="alert alert-danger">Attention! Please enter your message.</div>');
 } else if(trim($comments) == '') {
@@ -30,10 +30,10 @@ if(trim($name) == '') {
 } if(get_magic_quotes_gpc()) { $comments = stripslashes($comments); }
 
 //ENTER YOUR EMAIL ADDRESS HERE
-$address = 'email@example.com';
+$address = 'junjie1195@hotmail.com';
 
 $e_subject = 'You\'ve been contacted by ' . $name . '.';
-$e_body = "You have been contacted by $name from $website from your contact form, their additional message is as follows." . "\r\n" . "\r\n";
+$e_body = "You have been contacted by $name from your contact form, their additional message is as follows." . "\r\n" . "\r\n";
 $e_content = "\"$comments\"" . "\r\n" . "\r\n";
 $e_reply = "You can contact $name via email, $email";
 
